@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div class="form">
+    <div class="title">Tasks</div>
+    <input type="text" name="description" [(ngModel)]="description">
+    <button (click)="addTask(description)">Add</button>
+  </div>
+
+  <div class="tasks">
+    <div class="item" *ngFor="let task of tasks | async">
+      <a routerLink="/{{task.id}}">{{task.description}}</a>
+    </div>
+  </div>
+
+</div>
